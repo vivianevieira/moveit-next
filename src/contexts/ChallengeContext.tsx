@@ -22,11 +22,14 @@ interface ChallengesContextData {
 
 interface ChallengeProviderprops {
   children: ReactNode;
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallangesProvider({ children }: ChallengeProviderprops) {
+export function ChallengesProvider({ children }: ChallengeProviderprops) {
   const [level, setLevel] = useState(1);
   const [currentExperience, setCurrentExperience] = useState(0);
   const [challengesCompleted, setChallengesCompleted] = useState(0);
